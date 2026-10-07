@@ -3,8 +3,6 @@ import streamlit as st
 st.title("메인 제목")
 st.info("파란색 알림 박스")
 st.success("초록색 성공 메시지")
-<<<<<<< HEAD
-=======
 
 col1, col2 = st.columns(2)
 
@@ -21,14 +19,12 @@ st.session_state.login = True
 # 화면 레이아웃 구성
 st.title("나의 첫 웹앱")
 st.info("파이썬만으로 제작하는 UI")
->>>>>>> 2f4567c9cec5a8f5d5d638fa6c191282f04b5b11
 
 with col1:
     st.success("왼쪽 영역")
 with col2:
     st.write("오른쪽 영역")
 
-<<<<<<< HEAD
 # 데이터 입력
 name = st.text_input("이름")
 btn  = st.button("다음")
@@ -43,8 +39,6 @@ st.session_state.login = True
 st.title("나의 첫 웹앱")
 st.info("파이썬만으로 제작하는 UI")
 
-=======
->>>>>>> 2f4567c9cec5a8f5d5d638fa6c191282f04b5b11
 # 새로고침 시 데이터 유지
 if "user_list" not in st.session_state:
     st.session_state.user_list = []
@@ -52,7 +46,6 @@ if "user_list" not in st.session_state:
 with st.form("input_form"):
     name = st.text_input("이름")
     if st.form_submit_button("등록") and name:
-<<<<<<< HEAD
         st.session_state.user_list.append(name)
 
 tasks = [
@@ -68,6 +61,4 @@ st.subheader("📌금일 할 일 목록")
 for task in tasks:
     with st.container(border=True):
         st.write(task)
-=======
         st.session_state.user_list.append(name)
->>>>>>> 2f4567c9cec5a8f5d5d638fa6c191282f04b5b11
