@@ -48,16 +48,4 @@ for task in tasks:
     with st.container(border=True):
         st.write(task)
         st.session_state.user_list.append(name)
-
-
-st.title("나의 첫 Streamlit 앱")
-
-st.write("Streamlit을 이용해 만든 웹 애플리케이션입니다.")
-
-name = st.text_input("이름을 입력하세요:")
-
-if st.button("인사하기"):
-    if name:
-        st.succes(f"안녕하세요, {name}님!")
-    else:
-        st.warning("이름을 입력해주세요.")
+>>>>>>> 2f4567c9cec5a8f5d5d638fa6c191282f04b5b11
