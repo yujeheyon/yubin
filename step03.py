@@ -58,6 +58,6 @@ name = st.text_input("이름을 입력하세요:")
 
 if st.button("인사하기"):
     if name:
-        st.succes(f"안녕하세요, {name}님!")
+        st.success(f"안녕하세요, {name}님!")
     else:
         st.warning("이름을 입력해주세요.")
