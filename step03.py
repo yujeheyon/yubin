@@ -6,6 +6,11 @@ st.success("초록색 성공 메시지")
 
 col1, col2 = st.columns(2)
 
+with col1:
+    st.success("왼쪽 영역")
+with col2:
+    st.write("오른쪽 영역")
+
 # 데이터 입력
 name = st.text_input("이름")
 btn  = st.button("클릭")
@@ -19,11 +24,6 @@ st.session_state.login = True
 # 화면 레이아웃 구성
 st.title("나의 첫 웹앱")
 st.info("파이썬만으로 제작하는 UI")
-
-with col1:
-    st.success("왼쪽 영역")
-with col2:
-    st.write("오른쪽 영역")
 
 # 데이터 입력
 name = st.text_input("이름")
