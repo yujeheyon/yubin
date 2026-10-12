@@ -11,6 +11,8 @@ for i, day in enumerate(range(12, 28)):
     with cols[i % 4]:
         date = f"10월 {day}일"
 
+        st.info(date)
+
 # with cols:
 #     for i in range(8, 24):
 #         st.info("10월 일")
