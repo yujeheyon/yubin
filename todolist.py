@@ -10,35 +10,26 @@ col1, col2, col3, col4= st.columns(4)
 with col1:
     st.info("10월 12일")
     st.success(" ")
-    
-    with st.form("todo_form"):
-        todo = st.text_input("할 일")
-        if st.form_submit_button("등록") and list:
-            st.session_state.todo_list.append(list)
+    todo = st.text_input("할 알", key="todo_12")
+    btn  = st.form_submit_button("등록")
 
     st.info("10월 16일")
     st.success(" ")
+    todo = st.text_input("할 알", key="todo_16")
+    btn  = st.form_submit_button("등록")
     
-    with st.form("todo_form"):
-        todo = st.text_input("할 일")
-        if st.form_submit_button("등록") and list:
-            st.session_state.todo_list.append(list)
 
     st.info("10월 20일")
     st.success(" ")
+    todo = st.text_input("할 알", key="todo_20")
+    btn  = st.form_submit_button("등록")
     
-    with st.form("todo_form"):
-        todo = st.text_input("할 일")
-        if st.form_submit_button("등록") and list:
-            st.session_state.todo_list.append(list)
 
     st.info("10월 24일")
     st.success(" ")
+    todo = st.text_input("할 알", key="todo_24")
+    btn  = st.form_submit_button("등록")
     
-    with st.form("todo_form"):
-        todo = st.text_input("할 일")
-        if st.form_submit_button("등록") and list:
-            st.session_state.todo_list.append(list)
 
 with col2:
     st.info("10월 13일")
