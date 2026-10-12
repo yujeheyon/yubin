@@ -2,18 +2,16 @@ import streamlit as st
 
 st.title("ToDo List")
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2 = st.columns(2)
 
 with col1:
-    st.info("10월 12일")
-    
+    i = 12
+    for i in range(4):
+        st.info("10월" + i + "일")
 
-with col1:
-    st.info("10월 13일")
 
-with col1:
-    st.info("10월 14일")
-
-with col1:
-    st.info("10월 15일")
+with col2:
+    i = 16
+    for i in range(4):
+        st.info("10월" + i + "일")
     
