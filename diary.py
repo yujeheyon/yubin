@@ -27,7 +27,7 @@ with st.form("diary_input"):
 docs = db.collection("diary").stream()
 for doc in docs:
     col1, col2 = st.columns([8, 2])
-    col1.info(doc.to_dict(["text"]))
+    col1.info(doc.to_dict()["text"])
     if col2.button("삭제", key=doc.id):
         db.collection("diary").document(doc.id).delete()
         st.rerun()
