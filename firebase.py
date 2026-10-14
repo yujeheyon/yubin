@@ -14,7 +14,7 @@ db = firestore.client()
 
 st.title("메모장")
 
-with st.form("input_form", clear_onsubmit=True):
+with st.form("input_form", clear_on_submit=True):
     task = st.text_input("할 일을 적으세요")
     sub = st.form_submit_button("추가")
 
