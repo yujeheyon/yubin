@@ -58,5 +58,6 @@ else:
             if n_pw == n_pw_r:
                 db.collection("users").document(n_id).set({"password": n_pw})
                 st.success("회원가입 완료")
+                if st.button("로그인"): st.session_state["login"] = False; st.rerun()
             else:
                 st.info("비밀번호가 일치하지 않습니다")
