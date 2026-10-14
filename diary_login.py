@@ -35,7 +35,7 @@ if st.session_state["login"]:
         col1, col2 = st.columns([8, 2])
         with col1:
             text, date = st.columns([8, 2])
-            text.info(f"{text}, {date}")
+            text.info(f"{'text'}, {'date'}")
         # col1.info(doc.to_dict()["text"])
         # col1.info(doc.to_dict()["date"])
         if col2.button("삭제", key=doc.id):
