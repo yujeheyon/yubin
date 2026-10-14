@@ -53,6 +53,10 @@ else:
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
         n_pw = st.text_input("새 비밀번호", type="password", key="n_pw")
+        n_pw_r = st.text_input("새 비밀번호 확인", type="password", key="n_pw_r")
         if st.button("가입하기"):
-            db.collection("users").document(n_id).set({"password": n_pw})
-            st.success("회원가입 완료")
+            if n_pw == n_pw_r:
+                db.collection("users").document(n_id).set({"password": n_pw})
+                st.success("회원가입 완료")
+            else:
+                st.info("비밀번호가 일치하지 않습니다")
