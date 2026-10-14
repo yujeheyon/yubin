@@ -18,6 +18,26 @@ if st.session_state["login"]:
     st.title("나만의 다이어리")
     if st.button("로그아웃"): st.session_state["login"] = False; st.rerun()
 
+    # 입력 폼 만들기
+
+    with st.form("diary_input"):
+        content = st.text_input("오늘의 일기")
+        submit  = st.form_submit_button("기록하기")
+
+        if submit and content:
+            db.collection("diary").add({"text": content, "date": firestore.SERVER_TIMESTAMP})
+            st.success("저장 완료"); st.rerun()
+
+    # 목록 출력 및 삭제
+
+    docs = db.collection("diary").stream()
+    for doc in docs:
+        col1, col2 = st.columns([8, 2])
+        col1.info(doc.to_dict()["text"])
+        if col2.button("삭제", key=doc.id):
+            db.collection("diary").document(doc.id).delete()
+            st.rerun()
+
 else:
     tab1, tab2 = st.tabs(["로그인", "회원가입"])
     with tab1:
