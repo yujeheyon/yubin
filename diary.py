@@ -12,17 +12,17 @@ if not firebase_admin._apps:
 
 db = firestore.client()
 
-# 1. 입력 폼 만들기
+# 입력 폼 만들기
 
 with st.form("diary_input"):
     content = st.text_input("오늘의 일기")
     submit  = st.form_submit_button("기록하기")
 
     if submit and content:
-        db.collection("diary").add({"text": content, "date": "2026-10-14"})
+        db.collection("diary").add({"text": content, "date": firestore.SERVER_TIMESTAMP})
         st.success("저장 완료"); st.rerun()
 
-# 2. 목록 출력 및 삭제
+# 목록 출력 및 삭제
 
 docs = db.collection("diary").stream()
 for doc in docs:
