@@ -1,13 +1,13 @@
 import json
 import streamlit as st
 import firebase_admin
-from firebase_admin import credentiais, firestore
+from firebase_admin import credentials, firestore
 
 # Firebase 중복 초기화 방지
 if not firebase_admin._apps:
     key_string = st.secrets["firebase_key"]
     cred_dict = json.loads(key_string)
-    cred = credentiais.Certificate(cred_dict)
+    cred = credentials.Certificate(cred_dict)
     firebase_admin.initialize_app(cred)
 
 db = firestore.client()
@@ -15,9 +15,9 @@ db = firestore.client()
 st.title("메모장")
 
 with st.form("input_form", clear_onsubmit=True):
-    task = st.text_input("할 알을 적으세요")
+    task = st.text_input("할 일을 적으세요")
     sub = st.form_submit_button("추가")
 
 if sub and task:
-    db.collection("todos").add({"content": task, "at": firstore.SERVER_TIMESTAMP})
+    db.collection("todos").add({"content": task, "at": firestore.SERVER_TIMESTAMP})
     st.success(f"'{task}' 추가됨")
