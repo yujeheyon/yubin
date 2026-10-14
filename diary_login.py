@@ -33,7 +33,7 @@ if st.session_state["login"]:
     docs = db.collection("diary").stream()
     for doc in docs:
         col1, col2 = st.columns([8, 2])
-        col1.info(doc.to_dict()["text"])
+        col1.info(doc.to_dict()["text"], ["date"])
         if col2.button("삭제", key=doc.id):
             db.collection("diary").document(doc.id).delete()
             st.rerun()
@@ -58,6 +58,5 @@ else:
             if n_pw == n_pw_r:
                 db.collection("users").document(n_id).set({"password": n_pw})
                 st.success("회원가입 완료")
-                if st.button("로그인"): st.session_state["login"] = False; st.rerun()
             else:
                 st.info("비밀번호가 일치하지 않습니다")
