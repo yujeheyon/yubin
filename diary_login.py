@@ -27,6 +27,8 @@ else:
             u = db.collection("users").document(l_id).get()
             if u.exists and u.to_dict()["password"] == l_pw:
                 st.session_state["login"] = True; st.rerun()
+            else:
+                st.info("아이디 또는 비밀번호를 확인해주세요")
 
     with tab2:
         n_id = st.text_input("새 아이디", key="n_id")
